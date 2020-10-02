@@ -10,5 +10,5 @@ urlpatterns = [
     path('studentpage/<int:id>', views.studentpage, name='studentpage'),
     path('wardenpage/<int:id>', views.wardenpage, name='wardenpage'),
     path('studentpage/<int:id>/logout/', views.logout_view, name='logout'),
-    path('wardenpage/<int:id>/logout/', views.logout_view, name='logout')
+    path('wardenpage/<int:id>/logout/', views.logout_view1, name='logout1')
 ]

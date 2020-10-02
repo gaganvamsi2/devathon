@@ -11,16 +11,12 @@
     <!-- index page css file -->
     <link rel="stylesheet" type="text/css" href="{% static 'mess/index.css' %}">
 
-    <title>
-      student@mess
-    </title>
-
+    <title>student@mess</title>
   </head>
   <body>
  
 <div class="container-fluid" id="header_part">
-  <h2 class="ml-4">{{mess_name}} Mess<br> {{student_id}}</h2>
-  <h5 style="float: right;"><a href="{% url 'mess:logout' student_id %}"><br>logout </a></h5>
+  <h2 class="ml-4">Mess II {{student_id}}</h2>
 </div>
 <div class="container my-3 p-2" id="title_line">
   <h3>
@@ -34,10 +30,10 @@
   </h3>
   <ul>
       <li class="item"> 
-          extras Bill -- {{dailybill}}
+          extras          x{{daily_bill.extras}}
       </li>
       <li class="item">
-          total bill -- {{total_bill}}
+          today's bill    {{todays_bill}}
       </li>
   </ul>
 </div>
