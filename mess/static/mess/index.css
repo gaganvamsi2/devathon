@@ -1,0 +1,104 @@
+
+#header_part
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0d8888;
+}
+#header_part h2
+{
+	color: white;
+	font-size: 45px;
+}
+#title_line
+{
+	text-align: center;
+	background-color: #0d8888;
+	color: white;
+	font-size: 25px;
+}
+#login_forms
+{
+	/*background-color: #0d8888;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
+}
+#login_forms #student_login
+{
+	background-color: #f4f6f5;
+}
+#login_forms #warden_login
+{
+	background-color: #f4f6f5;
+}
+#login_forms #student_login #student_login_header_part
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:  #5a5a61b8;
+	color: white;
+	
+
+}
+#login_forms #warden_login #warden_login_header_part
+{
+	display: flex;
+    background-color: #5a5a61b8;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	
+}
+/*#break_line
+{
+height: 40vh;
+    width: 10px;
+    background: azure;*/
+.forgot_button
+{
+	background-color: white;
+	color: blue;
+	cursor: pointer;
+	border-radius: 2px;
+	border:none;
+}
+.forgot_button:hover
+{
+	background-color: blue;
+	color: white;
+}
+.sbmt_btn
+{
+	background-color: #1fc0c8;
+	color: white;
+	cursor: pointer;
+	border:none;
+	border-radius: 3px;
+	padding: 1%;
+	width: 39%;
+
+}
+.sbmt_btn:hover
+{
+	background-color: blue;
+	color:white;
+}
+.foter
+{
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #0d8888;
+	
+}
+.foter p
+{
+	color: white;
+}

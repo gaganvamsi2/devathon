@@ -1,0 +1,108 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- index page css file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'mess/index.css' %}">
+
+    <title>nitw@mess</title>
+  </head>
+  <body>
+ 
+<div class="container mt-3" id="header_part">
+  <img src="{%static 'mess/logo.jpg'%}" class="image-fluid">
+  <h2 class="ml-4">National Institue of Technology Warangal</h2>
+
+</div>
+<div class="container my-3 p-2" id="title_line">
+  <h2>
+    Student - Mess Records
+  </h2>
+  
+</div>
+ <h3 class="container my-3">Please login to proceed</h3>
+ {% if error_msg %}<h4 class="container my-3">Invalid username or password</h4><br>{% endif %}
+ <div class="container p-2" id="login_forms">
+  <div class="container my-2 mr-1" id ="student_login">
+    <div class="container my-2" id="student_login_header_part">
+      <img src="{%static 'mess/student_icon.png'%}" class="image-fluid m-2">
+      <h5 class="m-2">Student Login</h5>
+    </div>
+    <form class="container-fluid" action="{% url 'mess:studentpageauthenticate'%}" method="POST">
+      {% csrf_token %}
+      <input type="text" name="student_username" placeholder="Userame" class="container-fluid my-2 p-2" required>
+      
+     
+       <input type="password" name="student_password" placeholder="Password" class="container-fluid my-2 p-2" required>
+      <div class="container-fluid my-3">
+         <div class="float-left">
+          <input type="checkbox" name="remember_me"class=""><label class="mx-2">Remember Me</label>
+          </div>
+       <a href="#" class="float-right"><button class="forgot_button">Forgot Password ?</button></a>
+
+      </div>
+       <input type="submit" value="Login" class="container my-5 sbmt_btn">
+   
+    </form>
+    
+  </div>
+  <!-- <div id="break_line" class="mx-2"></div> -->
+  <div class="container my-2 ml-1" id="warden_login">
+    <div class="container my-2" id="warden_login_header_part">
+      <img src="{%static 'mess/warden_icon.png'%}" class="image-fluid m-2">
+      <h5 class="m-2">Warden Login</h5>
+    </div> 
+     <form class="container-fluid" action="{% url 'mess:wardenpageauthenticate'%}" method="POST">
+      {% csrf_token %}
+      <input type="text" name="warden_username" placeholder="Userame" class="container-fluid my-2 p-2" required>
+      
+     
+       <input type="password" name="warden_password" placeholder="Password" class="container-fluid my-2 p-2" required>
+      <div class="container-fluid my-3">
+         <div class="float-left">
+          <input type="checkbox" name="remember_me"class=""><label class="mx-2">Remember Me</label>
+          </div>
+       <a href="#" class="float-right"><button class="forgot_button">Forgot Password ?</button></a>
+
+      </div>
+       <input type="submit" value="Login" class="container my-5 sbmt_btn">
+   
+    </form>
+  </div>
+</div>
+
+<footer class="container foter my-4 p-2">
+   <p>for any query feel free to contact us at support_wsdc@gmail.com</p>
+  <p>all right reserved &copy WSDC , Nit Warangal</p>
+ 
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
