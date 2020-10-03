@@ -34,7 +34,7 @@
       <img src="{%static 'mess/student_icon.png'%}" class="image-fluid m-2">
       <h5 class="m-2">Student Login</h5>
     </div>
-    <form class="container-fluid" action="{% url 'mess:studentpageauthenticate'%}" method="POST">
+    <form class="container-fluid" action="{% url 'mess:studentpageauthenticate' %}" method="POST">
       {% csrf_token %}
       <input type="text" name="student_username" placeholder="Userame" class="container-fluid my-2 p-2" required>
       
@@ -58,7 +58,7 @@
       <img src="{%static 'mess/warden_icon.png'%}" class="image-fluid m-2">
       <h5 class="m-2">Warden Login</h5>
     </div> 
-     <form class="container-fluid" action="{% url 'mess:wardenpageauthenticate'%}" method="POST">
+     <form class="container-fluid" action="{% url 'mess:wardenpageauthenticate' %}" method="POST">
       {% csrf_token %}
       <input type="text" name="warden_username" placeholder="Userame" class="container-fluid my-2 p-2" required>
       
@@ -82,25 +82,6 @@
   <p>all right reserved &copy WSDC , Nit Warangal</p>
  
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

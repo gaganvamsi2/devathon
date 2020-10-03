@@ -1,0 +1,49 @@
+#today
+{
+	background-color: #0d8888;
+	text-align: center;
+	color: white;
+}
+.food
+{
+	background:#f4b503;
+	display: inline-block;
+}
+#breakfast
+{
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#breakfast .heading
+{
+	background-color:#0d8888;
+	color: white;
+	text-align: center; 
+}
+#breakfast #Fixed_food
+{
+	color: blue;
+	display: flex;
+	padding: 10px;
+
+}
+#done_btn
+{
+	background-color: green;
+	color: white;
+}
+#done_btn:hover
+{
+	cursor: pointer;
+	background-color: blue;
+}
+#items
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

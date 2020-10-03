@@ -13,7 +13,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'mess/index.css' %}">
     <!-- warden page css -->
     <link rel="stylesheet" type="text/css" href="{% static 'mess/warden.css' %}">
-    <title>daily_maintinance</title>
+    <!-- mess1 css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'mess/mess1.css' %">
+    <title>{{mess_record.mess_name}}</title>
   </head>
   <body>
  
@@ -26,24 +28,35 @@
   <h2>
     Student - Mess Records
   </h2>
-  <h5>
-    <a href="{% url 'mess:logout1' warden.warden_id%}" style="float: right;">logout</a>
-  </h5>
+  
 </div>
- <div class="container">
-   <h3 id="welcome">Welcome <span><u>{{warden.name}}</u>  </span> Sir</h3>
+
+ <div class="container " id="mess_detail">
+   <h5>Name of Mess : <span>{{mess_record.mess_name}}</span></h5>
+   <h5>Warden of Mess : <span>{{warden.name}}</span></h5>
  </div>
- <div class="container mt-2" id="mess_control"></div>
- {% for mess in mess_list %}
-   <div class="container messes mr-2" >
-     <h4 class="container my-4">{{mess.mess_name}}</h4>
-     <img src="{% static 'mess/logo.jpg' %}" class="image-fluid my-4">
-     <a href="{% url 'mess:mess' mess.mess_name%}"class="my-3"><button class="p-1">Update</button></a>
-   </div>
- {% endfor %}
+ <h4 class="container my-2 p-1" id="today">Today's Price and Extra's Plan</h4>
+
+ <div class="container">
+  <form action="{% url 'mess:update' mess_record.mess_name%}" method="POST">
+    {% csrf_token %}
+    <label for="bname">BreakFast:</label>
+    <input type="text" id="bname" name="bname" value={{mess_record.breakfast_rate}}><br><br> 
+    <label for="lame">Lunch:</label>
+    <input type="text" id="lname" name="lname" value={{mess_record.lunch_rate}}><br><br>
+    <label for="dname">dinner:</label>
+    <input type="text" id="dname" name="dname", value={{mess_record.dinner_rate}}><br><br>  
+    <label for="bxname">BreakFast Extra:</label>
+    <input type="text" id="bxname" name="bxname" value={{mess_record.extras_rate_breakfast}}><br><br>
+    <label for="exname">Lunch Extra:</label>
+    <input type="text" id="exname" name="exname" value={{mess_record.extras_rate_lunch}}><br><br>
+    <label for="dxname">Dinner Extra:</label>
+    <input type="text" id="dxname" name="dxname" value={{mess_record.extras_rate_dinner}}><br><br>
+    <input type="submit" value="Submit">
+  </form>
 </div>
 
-
+ </div>
 <footer class="container foter my-4 p-2">
    <p>for any query feel free to contact us at support_wsdc@gmail.com</p>
   <p>all right reserved &copy WSDC , Nit Warangal</p>

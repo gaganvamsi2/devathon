@@ -2,6 +2,13 @@ from django.db import models
 from django.shortcuts import get_object_or_404
 from datetime import date
 
+
+class Warden(models.Model):
+    name = models.CharField(max_length=4096)
+    warden_id = models.CharField(max_length=20) 
+    def __str__(self):
+        return self.name
+
 class Mess(models.Model):
     mess_name = models.CharField(max_length=4096, default="Ganga")
     breakfast_rate = models.IntegerField(default=0)
@@ -11,15 +18,9 @@ class Mess(models.Model):
     extras_rate_lunch = models.IntegerField(default=0)
     extras_rate_dinner = models.IntegerField(default=0)
     date = models.DateField(default=date.today)
+    warden_id = models.ForeignKey(Warden, on_delete=models.CASCADE, default="123456")
     def __str__(self):
         return self.mess_name
-
-class Warden(models.Model):
-    name = models.CharField(max_length=4096)
-    warden_id = models.CharField(max_length=20) 
-    mess = models.ForeignKey(Mess, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.name
 
 class Student(models.Model):
     name = models.CharField(max_length=4096)
@@ -40,6 +41,7 @@ class DailyBill(models.Model):
     extras_lunch = models.IntegerField(default=0)
     extras_dinner = models.IntegerField(default=0)
     date = models.DateField(default=date.today)
+    update = models.BooleanField(default=False)
 
 
     def checkDate(self, mess_name):
