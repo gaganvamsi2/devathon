@@ -1,0 +1,57 @@
+#mess_control
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#mess_control .messes
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	background-color:#595e61;
+	animation-name: color;
+	animation-duration: 3s;
+	
+	animation-timing-function: linear;
+
+}
+#mess_control .messes h4
+{
+	color: white;
+	text-align: center;
+}
+#mess_control .messes a
+{
+	
+	text-align: center;
+}
+#mess_control .messes a button
+{
+	background-color: green;
+	color: white;
+	width: 100%;
+	
+}
+#mess_control .messes a button:hover{
+	cursor: pointer;
+	background-color: blue;
+	color: white;
+}
+#mess_control .messes:hover
+{
+	box-shadow: 3px 3px 12px blue;
+	background-color: #0d8888;
+
+}
+#welcome
+{
+	color: #0d8888;
+}
+
+
+
